@@ -1,15 +1,16 @@
 from django.shortcuts import  HttpResponse
 
-def home_page(request):
-    html_response = """
-        <style>
-            h1{
-                clor: aque;
-                background-color: green;
-            }
-            
-        </style>
-        <h1>Blog site<h1>
-    """
-    return HttpResponse(html_response)
+
+def task_create(request):
+    return HttpResponse("""
+        <html>
+            <body>
+                <h1>Create Task</h1>
+                <form method="post">
+                    <input type="text" name="task_name" placeholder="Task name">
+                    <button type="submit">Create</button>
+                </form>
+            </body>
+        </html>
+    """)
 
